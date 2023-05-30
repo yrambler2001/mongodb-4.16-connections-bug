@@ -24,6 +24,7 @@ async function run() {
     client.db("admin").command({ ping: 1 });
     client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    await new Promise((res) => { setTimeout(res, 5 * 60 * 1000) })
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
